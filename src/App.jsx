@@ -1,12 +1,10 @@
 import "./App.css";
-import Home from "./components/home";
+import Home from "./components/Home";
 
 function App() {
   return (
     <div className="h-full w-full bg-[#E8F9FF] flex justify-center items-center">
       <Home />
-      
-
     </div>
   );
 }
