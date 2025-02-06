@@ -1,2 +1,2 @@
-const apiBackend = 'http://localhost:5000/api';
+const apiBackend = 'https://roxiler-backend-g3jv.onrender.com/api';
 export default apiBackend;

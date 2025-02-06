@@ -31,9 +31,9 @@ const PieChartComponent = ({ data, selectedMonth }) => {
   }));
 
   return (
-    <div className="flex flex-col items-center  ">
+    <div className="flex flex-col items-center bg-white ">
       <p className="text-2xl font-semibold ">Category Distribution in {monthName}</p>
-      <PieChart width={400} height={400}>
+      <PieChart width={400} height={300}>
         <Pie
           data={formattedData}
           dataKey="count"

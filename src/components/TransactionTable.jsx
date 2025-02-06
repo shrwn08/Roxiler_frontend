@@ -1,8 +1,4 @@
-
-
-const TransactionsTable = ({ data, totalPages, page, setPage, perPage }) => {
- 
-
+const TransactionsTable = ({ data, totalPages, page, setPage, perPage, searchQuery }) => {
   const handleNextPage = () => {
     if (page < totalPages) {
       setPage(page + 1);
@@ -14,6 +10,17 @@ const TransactionsTable = ({ data, totalPages, page, setPage, perPage }) => {
       setPage(page - 1);
     }
   };
+
+  const filteredData = data.filter(transaction => {
+    const title = transaction.title.toLowerCase();
+    const description = transaction.description.toLowerCase();
+    const price = transaction.price.toString();
+    return (
+      title.includes(searchQuery.toLowerCase()) ||
+      description.includes(searchQuery.toLowerCase()) ||
+      price.includes(searchQuery)
+    );
+  });
 
   return (
     <div className="w-11/12">
@@ -29,8 +36,8 @@ const TransactionsTable = ({ data, totalPages, page, setPage, perPage }) => {
           </tr>
         </thead>
         <tbody>
-          {data.length > 0 ? (
-            data.map((transaction) => (
+          {filteredData.length > 0 ? (
+            filteredData.map((transaction) => (
               <tr key={transaction.id}>
                 <td className="border-1 pl-2">{transaction._id}</td>
                 <td className="border-1 pl-2">{transaction.title.substring(0, 20)}...</td>

@@ -21,10 +21,10 @@ const TransactionsStats = ({ statsData, selectedMonth }) => {
   const monthName = monthNames[selectedMonth];
 
   return (
-    <div className="w-full flex justify-center items-center flex-col mt-5">
-      <p className="text-xl">Statistics for {monthName}</p>
+    <div className="w-full flex justify-center items-center flex-col mt-5 bg-[#FFDA78]">
+      <p className="text-xl font-bold">Statistics for {monthName}</p>
       {statsData ? (
-        <div className="px-8 py-4 w-96 bg-[#FFDA78] rounded-md ">
+        <div className="px-8 py-4 w-96 rounded-md ">
           <div className="flex justify-between items-center">
             <p className="font-semiBold text-xl">Total Sale Amount: </p>
             <span className="text-xl font-normal">
@@ -32,7 +32,7 @@ const TransactionsStats = ({ statsData, selectedMonth }) => {
             </span>
           </div>
           <div className="flex justify-between items-center">
-            <p className="font-semiBold text-xl">
+            <p className="font-semiBold text-xl"> 
               Total Sold Items: 
             </p>
             <span className="text-xl font-normal">
